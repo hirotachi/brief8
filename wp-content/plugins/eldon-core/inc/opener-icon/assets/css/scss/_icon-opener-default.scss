@@ -1,0 +1,161 @@
+/* ==========================================================================
+   Opener icon styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+	
+	.qodef-m-icon {
+		position: relative;
+		visibility: visible;
+		
+		&.qodef--close {
+			position: absolute;
+			top: 0;
+			left: 0;
+			visibility: hidden;
+		}
+	}
+	
+	&.qodef-source--icon-pack {
+		font-size: 35px;
+		
+		* {
+			display: inline-block;
+			line-height: inherit;
+			
+			&:before {
+				display: inline-block;
+				line-height: inherit;
+			}
+		}
+
+		&.qodef--opened {
+
+			.qodef-m-icon {
+
+				&.qodef--open {
+					visibility: hidden;
+				}
+
+				&.qodef--close {
+					visibility: visible;
+				}
+			}
+		}
+	}
+	
+	&.qodef-source--svg-path {
+		
+		span {
+			position: relative;
+			
+			> * {
+				vertical-align: middle;
+			}
+			
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+
+		&.qodef--opened {
+
+			.qodef-m-icon {
+
+				&.qodef--open {
+					visibility: hidden;
+				}
+
+				&.qodef--close {
+					visibility: visible;
+				}
+			}
+		}
+	}
+	
+	&.qodef-source--predefined {
+		
+		.qodef-m-lines {
+			position: relative;
+			display: block;
+			width: 36px;
+			height: 37px;
+			transition: transform .4s cubic-bezier(.39, .1, 0, .98);
+			overflow: hidden;
+		}
+		
+		.qodef-m-line {
+			position: absolute;
+			left: 0;
+			height: 5px;
+			width: 100%;
+			background-color: currentColor;
+			transition: top .15s ease, transform .4s cubic-bezier(.39, .1, 0, .98);
+			
+			&.qodef--1 {
+				top: 0;
+			}
+			
+			&.qodef--2 {
+				top: 16px;
+			}
+			
+			&.qodef--3 {
+				bottom: 0;
+			}
+		}
+		
+		&.qodef--opened {
+			
+			.qodef-m-line {
+				
+				&.qodef--1 {
+					//top: 15px;
+					//transform: rotate(45deg);
+					transform: translateY(15px) rotate(45deg);
+				}
+				
+				&.qodef--2 {
+					top: 15px;
+					transform: rotate(-45deg);
+				}
+				
+				&.qodef--3 {
+					opacity: 0;
+				}
+			}
+			
+			@media only screen and (min-width: $screen-size-1025) {
+				&:hover {
+					.qodef-m-lines {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+		
+		@media only screen and (min-width: $screen-size-1025) {
+			&:not(.qodef--opened):hover {
+				.qodef-m-line {
+					&.qodef--1 {
+						transform: translateX(-50%);
+					}
+					
+					&.qodef--2 {
+						transform: scaleX(.5);
+					}
+					
+					&.qodef--3 {
+						transform: translateX(50%);
+					}
+				}
+			}
+		}
+	}
+}

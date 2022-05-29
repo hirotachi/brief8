@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */
+
+.qodef-social-share {
+	&.qodef-layout--text {
+
+		ul {
+			vertical-align: baseline;
+			line-height: 1em;
+		}
+		
+		li {
+			margin-right: 9px;
+
+			a {
+				@include qodefInfoStyle();
+			}
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share shortcode styles
+   ========================================================================== */

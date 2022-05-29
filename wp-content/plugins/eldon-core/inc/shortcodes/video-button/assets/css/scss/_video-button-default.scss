@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.qodef-video-button {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+
+	.qodef-m-play {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $heading-color;
+		font-size: 106px;
+		line-height: 1;
+
+		.qodef-play-icon {
+			position: absolute;
+			top: 50%;
+			overflow: visible;
+
+			&--full {
+				fill: $main-color;
+				transform:  translateY(calc(-50% - 18px)) translateX(calc(-50% + 10px));
+			}
+
+			&--outline {
+				fill: none;
+				stroke: $main-color;
+				transform: translate(-50%,-50%);
+			}
+			
+			path {
+				transition: transform .5s cubic-bezier(.39,.1,0,.98);
+				transform: translateX(0) translateY(0);
+			}
+		}
+
+		&:hover {
+			.qodef-play-icon {
+				&--full {
+					path {
+						transform: translateX(-5px) translateY(9px);
+					}
+				}
+				&--outline {
+					path {
+						transform: translateX(5px) translateY(-9px);
+					}
+				}
+			}
+
+			//.qodef-play-icon--full {
+			//	transform: translate(-50%,-50%);
+			//}
+		}
+
+		@include qodefScreenSize680 {
+			.qodef-play-icon {
+				width: 48px
+			}
+
+			.qodef-play-icon--full {
+				transform:  translateY(calc(-50% - 9px)) translateX(calc(-50% + 5px));
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

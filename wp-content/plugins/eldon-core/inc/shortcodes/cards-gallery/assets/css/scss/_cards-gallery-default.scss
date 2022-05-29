@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */
+
+.qodef-cards-gallery {
+	@include qodefRelativeLayout();
+	padding: 10px 0;
+	
+	.qodef-e-inner {
+		@include qodefRelativeLayout();
+	}
+	
+	img {
+		position: relative;
+		display: block;
+		border: 1px solid #363636;
+
+		.qodef-skin--white & {
+			border-color: $border-lighter-color;
+		}
+	}
+	
+	.qodef-m-fake-card {
+		position: relative;
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+	
+	.qodef-m-card {
+		position: absolute;
+		transition: all .3s cubic-bezier(.29,.11,.2,.96);
+		
+		.qodef-m-bundle-item {
+			transition: transform .3s cubic-bezier(.29,.11,.2,.96);
+		}
+		
+		img {
+			border: 1px solid #363636;
+
+			.qodef-skin--white & {
+				border-color: $border-lighter-color;
+			}
+		}
+		
+		&.qodef-animating {
+			transition: all 1s cubic-bezier(.19, 1, .22, 1);
+			pointer-events: none;
+		}
+		
+		&.qodef-animating-siblings {
+			transition: all .6s cubic-bezier(0, 0, 0, 1);
+			pointer-events: none;
+		}
+	}
+	
+	&.qodef-orientation--left .qodef-m-card {
+		left: 0;
+		will-change: transform;
+		
+		&.qodef-out {
+			transform: translateX(-100%);
+		}
+		
+		&:nth-last-child(6) {
+			transform: scale(.5) translateX(80%);
+		}
+		
+		&:nth-last-child(5) {
+			transform: scale(.6) translateX(54%);
+		}
+		
+		&:nth-last-child(4) {
+			transform: scale(.7) translateX(35%);
+		}
+		
+		&:nth-last-child(3) {
+			transform: scale(.8) translateX(21%);
+		}
+		
+		&:nth-last-child(2) {
+			transform: scale(1);
+		}
+
+		&:last-child {
+			transform: translate(-9%,14%);
+		}
+		
+		&:not(:last-of-type) {
+			cursor: pointer;
+		}
+		
+		&:not(:last-of-type):not(.active):hover {
+			.qodef-m-bundle-item {
+				transform: translate3d(-10px, 0, 0);
+			}
+		}
+	}
+	
+	&.qodef-orientation--right .qodef-m-card {
+		right: 0;
+		will-change: transform;
+		
+		&.qodef-out {
+			transform: translateX(100%);
+		}
+		
+		&:nth-last-child(6) {
+			transform: scale(.5) translateX(-80%);
+		}
+		
+		&:nth-last-child(5) {
+			transform: scale(.6) translateX(-54%);
+		}
+		
+		&:nth-last-child(4) {
+			transform: scale(.7) translateX(-35%);
+		}
+		
+		&:nth-last-child(3) {
+			transform: scale(.8) translateX(-21%);
+		}
+		
+		&:nth-last-child(2) {
+			transform: translateX(0);
+		}
+
+		&:last-child {
+			transform: translate(9%,-12%);
+		}
+		
+		&:not(:last-of-type) {
+			cursor: pointer;
+		}
+		
+		&:not(:last-of-type):not(.active):hover {
+			.qodef-m-bundle-item {
+				transform: translate3d(10px, 0, 0);
+			}
+		}
+	}
+	
+	.no-touchevents &.qodef-animation--bundle {
+		
+		img {
+			visibility: hidden;
+		}
+		
+		&.qodef-orientation--right.qodef-appeared {
+			@include keyframes(qodefCardAppearFromRight) {
+				0% {
+					transform: translate3d(100%, 0, 0);
+					opacity: 0;
+					visibility: visible;
+				}
+				
+				30% {
+					opacity: 1;
+					visibility: visible;
+				}
+				
+				100% {
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			img {
+				animation: qodefCardAppearFromRight 1s cubic-bezier(.19, 1, .22, 1) forwards;
+			}
+			
+			.qodef-m-card {
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						img:not(.qodef-animation-done) {
+							animation-delay: $i * .2s;
+						}
+					}
+				}
+			}
+		}
+		
+		&.qodef-orientation--left.qodef-appeared {
+			@include keyframes(qodefCardAppearFromLeft) {
+				0% {
+					visibility: visible;
+					opacity: 0;
+					transform: translate3d(-100%, 0, 0);
+				}
+				
+				30% {
+					visibility: visible;
+					opacity: 1;
+				}
+				
+				100% {
+					visibility: visible;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			img {
+				animation: qodefCardAppearFromLeft 1s cubic-bezier(.19, 1, .22, 1) forwards;
+			}
+			
+			.qodef-m-card {
+				@for $i from 1 through 8 {
+					&:nth-child(#{$i}) {
+						img:not(.qodef-animation-done) {
+							animation-delay: $i * .2s;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Cards Gallery shortcode style - begin
+   ========================================================================== */

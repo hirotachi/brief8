@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Interactive Link Showcase Interactive List styles
+   ========================================================================== */
+
+.qodef-interactive-link-showcase {
+	
+	&.qodef-layout--interactive-list {
+
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+		
+		.qodef-m-items {
+			position: relative;
+			flex-flow: wrap;
+			justify-content: center;
+		}
+		
+		.qodef-m-item {
+			padding: 0;
+			margin: 0 .73em 0 0;
+			color: $heading-color;
+			background-color: transparent;
+			z-index: 11; // Let hover illustration go below other items.
+			
+			&.qodef--active {
+				z-index: 5;
+				
+				.qodef-e-follow-content {
+					display: block;
+				}
+			}
+		}
+		
+		.qodef-e-title {
+			display: block;
+			z-index: -2;
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: calc(100% + .1em);
+				top: 1.1em;
+				width: .3em;
+				height: .07em;
+				background: currentColor;
+			}
+		}
+		
+		.qodef-e-follow-content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: auto;
+			display: none;
+		}
+		
+		.qodef-e-follow-image {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: auto;
+			transform: translate3d(-50%, -50%, 0);
+			overflow: hidden;
+			z-index: -1;
+			
+			img {
+				position: relative;
+				display: block;
+				width: auto;
+				max-width: 60vw;
+
+				@include qodefScreenSize680 {
+					max-width: 160px;
+				}
+			}
+		}
+		
+		.qodef-e-follow-title {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			display: block;
+			white-space: nowrap;
+			color: var(--qodef-main-color);
+			mix-blend-mode: difference;
+
+			body.qodef-skin--white & {
+				color: #fff;
+				mix-blend-mode: difference;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: calc(100% + .1em);
+				top: 1.1em;
+				width: .3em;
+				height: .07em;
+				background: currentColor;
+			}
+		}
+		
+		@at-root .qodef-skin--white &{
+			
+			.qodef-m-item {
+				.qodef-e-follow-image img {
+					background-color:  #fff;
+				}
+			}
+		}
+	}
+}

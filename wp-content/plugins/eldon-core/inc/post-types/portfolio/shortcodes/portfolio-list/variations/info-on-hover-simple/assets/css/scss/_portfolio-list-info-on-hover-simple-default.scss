@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+
+	&.qodef-item-layout--info-on-hover-simple {
+		margin: 0;
+		
+		&.qodef-image-blurred {
+			.qodef-e-media-image {
+				&.qodef--background {
+					img {
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+		article {
+
+			.qodef-e-media-image {
+
+				&.qodef--background {
+					margin-bottom: 0;
+				}
+			}
+
+			.qodef-e-content {
+				@include qodefAbsoluteLayout();
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				opacity: 0;
+				transform: translate3d(15px,0,0);
+				transition: opacity .4s cubic-bezier(.22,.61,.36,1),.6s transform cubic-bezier(.18,.79,.48,.99);
+			}
+
+			.qodef-e-title {
+				color: $main-color-black;
+				transsition: trans
+
+				a {
+					color: inherit;
+				}
+			}
+
+			.qodef-e-info {
+				margin-top: 6px;
+
+				> * {
+					@include qodefParagraphStyle();
+					color: $main-color-black;
+				}
+			}
+
+			.qodef-e-post-link {
+				z-index: 2;
+			}
+
+			&:hover {
+
+				.qodef-e-content {
+					opacity: 1;
+					transform: translate3d(0px,0,0);
+				}
+			}
+
+			.qodef-e-inner {
+				border: 1px solid var(--qodef-main-color);
+			}
+
+			.qodef-e-background-holder {
+				overflow: hidden;
+				background-color: $main-color;
+			}
+
+			.qodef-e-top-holder {
+				margin-top: 30px;
+			}
+		}
+	}
+}

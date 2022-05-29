@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+#qodef-page-header-inner {
+	
+	.qodef-header--minimal & {
+
+		border-width: 0;
+		padding: $full-width-side-padding;
+
+		.qodef-header-logo-link {
+			margin-right: auto;
+		}
+		
+		.qodef-widget-holder {
+			margin-right: 50px;
+		}
+	}
+}

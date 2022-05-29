@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Team lists shortcode styles
+   ========================================================================== */
+
+.qodef-team-list {
+	
+	.qodef-e-role {
+		@include qodefInfoStyle();
+		margin: 0;
+	}
+	
+	.qodef-e-title {
+		margin: 0 0 9px;
+	}
+
+	.qodef-e-image {
+		position: relative;
+	}
+
+	.qodef-m-description {
+		margin-top: 13px;
+	}
+	
+	.qodef-team-member-social-icons {
+		@include qodefInfoStyle();
+		margin: 0;
+		position: absolute;
+		bottom: 0;
+		background-color: var(--qodef-main-color-second);
+		border: 1px solid var(--qodef-main-color);
+		padding: 19px 29px;
+		left: 9.2%;
+	}
+
+	.qodef-e-media-second-image {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.qodef-e-image-inner {
+		opacity: 0;
+		transition: $opacity-transition;
+	}
+
+	.qodef-e-inner {
+
+		&:hover {
+			.qodef-e-image-inner {
+				opacity: 1;
+			}
+		}
+	}
+
+	.qodef-e-content {
+		padding: 0 9.2%;
+	}
+}

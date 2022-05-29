@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+	@include qodefRelativeLayout();
+	margin: 114px 0 0;
+
+	.qodef-variations--big + & {
+		margin-top: 112px;
+	}
+
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+
+		svg {
+			* {
+				fill: currentColor;
+			}
+			
+			overflow: visible;
+			
+			polygon {
+				transition: transform .4s cubic-bezier(.39,.1,0,.98);
+			}
+		}
+		
+		&.qodef--prev {
+			
+			.qodef-m-nav-icon {
+				margin-right: 10px;
+			}
+			
+			&:hover {
+				svg polygon {
+					transform: translate3d(-6px , 0, 0);
+				}
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			text-align: right;
+			margin-left: auto;
+			
+			.qodef-m-nav-icon {
+				margin-left: 10px;
+			}
+			
+			&:hover {
+				svg polygon {
+					transform: translate3d(6px , 0, 0);
+				}
+			}
+		}
+		
+		&.qodef--back-link {
+			position: absolute;
+			top: 0;
+			left: calc(50% - 16px); // 16 is half size of icon size
+			
+			.qodef-m-nav-icon {
+				font-size: 32px;
+			}
+		}
+	}
+	
+	.qodef-m-nav-icon {
+		font-size: 30px;
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefHeadingStyle(h6, false);
+	}
+}

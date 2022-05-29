@@ -1,0 +1,66 @@
+/* ==========================================================================
+   Footer Logo widget static style start
+   ========================================================================== */
+
+.qodef-footer-logo {
+	display: flex;
+	position: relative;
+	align-items: center;
+
+	.qodef-footer-logo-image {
+		height: 110px;
+	}
+
+	a {
+		display: block;
+		height: 100%;
+
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
+
+	.qodef-footer-logo-border {
+		position: absolute;
+		right: 10%;
+		height: 100%;
+		width: 1px;
+		background: #c6c6c6;
+
+		@include qodefScreenSize1366 {
+			right: 0 !important;
+		}
+
+		@include qodefScreenSize1024 {
+			display: none;
+		}
+	}
+
+	@include qodefScreenSize1440 {
+		img {
+			max-width: calc(100% - 35px);
+			height: auto !important;
+		}
+	}
+
+	@include qodefScreenSize1366 {
+		img {
+			max-width: calc(100% - 25px);
+		}
+	}
+
+	@include qodefScreenSize680 {
+		height: auto !important;
+		margin: 0 0 20px !important;
+
+		img {
+			max-width: unset;
+			height: 100% !important;
+		}
+	}
+	
+	img {
+		@include qodefLogoAnimate();
+	}
+}

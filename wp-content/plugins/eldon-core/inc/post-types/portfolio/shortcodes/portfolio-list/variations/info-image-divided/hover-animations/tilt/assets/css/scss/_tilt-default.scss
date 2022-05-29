@@ -1,0 +1,15 @@
+.qodef-portfolio-list.qodef-item-layout--info-image-divided {
+    &.qodef-hover-animation--tilt {
+        .qodef-e-image {
+            //overflow: hidden;
+    
+            .qodef-e-image-tilt {
+                transform-style: preserve-3d;
+            }
+            
+            //img {
+            //    transform: scale(1.1);
+            //}
+        }
+    }
+}

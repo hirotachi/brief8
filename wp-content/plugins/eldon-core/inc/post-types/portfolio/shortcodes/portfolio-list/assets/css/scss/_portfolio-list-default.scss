@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Portfolio List shortcode styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+	
+	.qodef-e-inner {
+		position: relative;
+	}
+
+	.qodef-e-inner,
+	.qodef-e-media,
+	.qodef-e-content {
+		@include qodefRelativeLayout();
+	}
+
+	.qodef-e-media {
+
+		> * {
+			margin-bottom: 30px;
+		}
+
+		iframe {
+			display: block;
+			height: 100%;
+		}
+	}
+
+	.qodef-e-media-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		max-width: 100%;
+
+		a, img {
+			display: block;
+			width: 100%;
+		}
+
+		&.qodef--background {
+			width: 100%;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+			img {
+				visibility: hidden;
+			}
+		}
+	}
+
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	.qodef-e-excerpt {
+		margin: 15px 0 0;
+	}
+
+	.qodef-e-read-more {
+		margin: 15px 0 0;
+	}
+
+	.qodef-e-top-holder {
+		margin-bottom: 2px;
+	}
+
+	.qodef-e-post-link {
+		@include qodefAbsoluteLayout();
+	}
+	
+	.qodef-m-pagination {
+		margin-top: 35px;
+	}
+
+	&.qodef-items--fixed {
+		
+		.qodef-e-image {
+			//because of the custom padding around item
+			height: 100%;
+			overflow: hidden;
+		}
+		
+		.qodef-e-media-image {
+			height: 100%;
+			
+			a {
+				@include qodefRelativeLayout();
+				height: 100%;
+			}
+		}
+	}
+	
+	&.qodef--custom-slider-behavior {
+		//overflow: hidden;
+		opacity: 0;
+		transition: .5s .3s;
+		//width: 100%;
+		
+		&.qodef-swiper--initialized {
+			opacity: 1;
+		}
+		
+		//.swiper-wrapper {
+		//	width: 100%;
+		//}
+		
+		article.swiper-slide {
+			height: calc(((100vh - 150px) / 3) - 18px);
+			width: calc(((100vh - 150px) / 3) - 18px);
+		}
+	}
+}

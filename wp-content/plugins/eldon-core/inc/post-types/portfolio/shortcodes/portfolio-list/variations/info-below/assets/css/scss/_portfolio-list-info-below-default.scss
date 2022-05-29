@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+ 
+	&.qodef-item-layout--info-below {
+  
+		.qodef-e-content {
+			margin-top: 28px;
+		}
+
+		.qodef-e-image {
+			.qodef-skin--white & {
+				border: 1px solid var(--qodef-main-color);
+			}
+		}
+
+		.qodef-e-info {
+			margin-top: 8px;
+			padding-bottom: 50px;
+
+			> * {
+				@include qodefParagraphStyle();
+			}
+		}
+	}
+}

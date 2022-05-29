@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Portfolio Fullscreen Showcase shortcode variation styles - responsive
+   ========================================================================== */
+
+.qodef-portfolio-fullscreen-showcase {
+
+	&.qodef-item-layout--inverted-color-title {
+
+		@include qodefScreenSize1440 {
+
+			article {
+				transform: scale(0.5);
+
+				&.swiper-slide-active {
+					transform: scale(0.8);
+				}
+			}
+		}
+
+		@include qodefScreenSize1024 {
+
+			article {
+
+				&.swiper-slide-active {
+					transform: scale(0.6);
+
+					.qodef-e-media-image {
+						transform: scale(1.8);
+					}
+				}
+			}
+		}
+
+		@include qodefScreenSize768 {
+
+			.qodef-e-title {
+				white-space: normal;
+			}
+
+			article {
+
+				&.swiper-slide-active {
+					transform: scale(0.8);
+
+					.qodef-e-media-image {
+						transform: none;
+					}
+				}
+			}
+		}
+
+		@include qodefScreenSize680 {
+
+			.qodef-e-title {
+				background-size: contain;
+				width: 100%;
+				justify-content: center;
+				font-size: 75px;
+			}
+
+			article {
+
+				&.swiper-slide-active {
+					transform: none;
+				}
+			}
+		}
+
+	}
+}

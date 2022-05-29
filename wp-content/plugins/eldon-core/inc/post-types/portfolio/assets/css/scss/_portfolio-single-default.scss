@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Portfolio Single styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	@include qodefRelativeLayout();
+
+	.qodef-portfolio-content {
+		letter-spacing: -0.02em;
+	}
+
+	.qodef-media {
+
+		iframe {
+			max-height: calc(56.25vw);
+		}
+
+		img {
+			border: 1px solid transparent;
+
+			.qodef-skin--white & {
+				border-color: $main-color-black;
+			}
+		}
+	}
+
+	.qodef-portfolio-title {
+		margin: 0 0 18px;
+	}
+
+	.qodef-portfolio-info {
+
+		> *,
+		.qodef-social-share {
+			display: flex;
+			align-items: flex-start;
+			margin-bottom: 19px;
+			flex-direction: column;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.qodef-e-label {
+			margin: 0 0 5px 0;
+		}
+
+		.qodef-social-title {
+			margin: 0 0 10px 0;
+		}
+
+		p, a {
+			margin: 0;
+		}
+
+		.qodef-e-category {
+			@include qodefInfoStyle();
+		}
+	}
+
+	.qodef-variations--small {
+
+		.qodef-portfolio-title {
+			padding-top: 3px;
+		}
+
+		.qodef-media {
+			margin-right: 30px;
+		}
+
+		.qodef-portfolio-info {
+			margin-top: 40px;
+		}
+	}
+
+	.qodef-variations--big {
+
+		.qodef-e-content {
+			margin-top: 83px;
+		}
+
+		.qodef-portfolio-info {
+
+			&.qodef-grid-item {
+				margin-top: 11px;
+			}
+		}
+	}
+}

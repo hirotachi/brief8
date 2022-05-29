@@ -1,0 +1,234 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+$right-holder-width: 31.5%;
+.qodef-portfolio-list {
+
+	&.qodef-item-layout--featured-big {
+
+		.qodef-e-inner {
+			display: flex;
+
+			@include qodefScreenSize680 {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+		}
+
+		.qodef-e-right-holder {
+			flex-basis: $right-holder-width;
+			padding-left: 7.7865%;
+
+			@include qodefScreenSize1024 {
+				flex-basis: 25%;
+				padding-left: 4.7865%;
+			}
+
+			@include qodefScreenSize680 {
+				flex-basis: 75%;
+				margin: 40px 0;
+				padding: 0;
+			}
+		}
+
+		.qodef-e-title {
+			margin-top: 31px;
+		}
+
+		.qodef-e-content-info {
+			margin-top: 10px;
+
+			a {
+				display: inline;
+			}
+
+			@include qodefScreenSize1024 {
+				display: none;
+			}
+
+			@include qodefScreenSize680 {
+				display: block;
+			}
+		}
+
+		.qodef-e-left-holder {
+			flex-basis: calc(100% - #{$right-holder-width});
+
+			@include qodefScreenSize1024 {
+				flex-basis: 75%;
+			}
+
+			@include qodefScreenSize680 {
+				flex-basis: 100%;
+				padding-left: 0;
+			}
+		}
+
+		&.qodef-col-num--1 .swiper-wrapper {
+			@media only screen and (min-width: $screen-size-1025) {
+				opacity: 0;
+			}
+		}
+
+		.qodef--custom-swiper {
+			z-index: 1;
+			@include qodefAbsoluteLayout();
+
+			.qodef-e-left-holder {
+
+				.qodef-e-media-image {
+					position: relative;
+					overflow: hidden;
+
+					a {
+						display: inline-block;
+
+						&:nth-of-type(2) {
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+
+						&.qodef--animate-in {
+							animation: qode-swiper-image-in .8s cubic-bezier(0.46, 0.03, 0.52, 0.96) both;
+						}
+
+						&.qodef--animate-out {
+							animation: qode-swiper-image-out .8s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+						}
+					}
+				}
+			}
+
+			.qodef-e-media-second-image {
+				position: relative;
+				overflow: hidden;
+
+				a {
+					display: inline-block;
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+
+					&.qodef--animate-in {
+						animation: qode-swiper-image-in .6s .4s cubic-bezier(0.46, 0.03, 0.52, 0.96) both;
+					}
+
+					&.qodef--animate-out {
+						animation: qode-swiper-image-out .6s .4s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+					}
+				}
+			}
+
+			.qodef-e-title {
+				position: relative;
+				overflow: hidden;
+
+				a {
+					display: inline-block;
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						opacity: 0;
+					}
+
+					&.qodef--animate-in {
+						animation: qode-swiper-title-in .8s .6s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+					}
+
+					&.qodef--animate-out {
+						animation: qode-swiper-title-out .3s .6s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+					}
+				}
+			}
+
+			.qodef-e-content-info {
+				position: relative;
+				min-height: 99px;
+				overflow: hidden;
+
+				.qodef-e-content-info-inner {
+					display: inline-block;
+
+					&:nth-of-type(2) {
+						position: absolute;
+						top: 0;
+						left: 0;
+						opacity: 0;
+					}
+
+					&.qodef--animate-in {
+						animation: qode-swiper-title-in .8s .7s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+					}
+
+					&.qodef--animate-out {
+						animation: qode-swiper-title-out .3s .7s cubic-bezier(0.46, 0.03, 0.52, 0.96) forwards;
+					}
+				}
+			}
+		}
+
+		&.qodef-swiper-container.qodef-bullets--on {
+			padding-bottom: 0;
+		}
+
+		.swiper-pagination {
+			right: 0;
+			width: $right-holder-width;
+			left: auto;
+			display: flex;
+			justify-content: flex-end;
+			bottom: 0 !important;
+
+			@include qodefScreenSize1024 {
+				width: 25%;
+			}
+
+			@include qodefScreenSize680 {
+				width: 100%;
+				justify-content: flex-start;
+			}
+
+			.swiper-pagination-bullet {
+
+				&:after {
+					bottom: 0;
+				}
+			}
+		}
+
+		&.qodef--no-bottom-space {
+			margin-bottom: 0;
+		}
+
+		.swiper-button-next {
+			right: calc(#{$right-holder-width} + 30px) !important;
+
+			@include qodefScreenSize1024 {
+				right: calc(25% + 30px) !important;
+			}
+
+			@include qodefScreenSize680 {
+				right: 0 !important;
+			}
+		}
+
+		.swiper-button-prev {
+
+			@include qodefScreenSize680 {
+				left: auto !important;
+				right: 0 !important;
+				top: calc(50% + 55px);
+			}
+		}
+
+		.qodef-e-media-second-image {
+			background: var(--qodef-main-color);
+		}
+	}
+}

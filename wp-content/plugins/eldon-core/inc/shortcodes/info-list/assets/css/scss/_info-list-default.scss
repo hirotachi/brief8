@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Info List shortcode styles
+   ========================================================================== */
+
+.qodef-info-list {
+	@include qodefRelativeLayout();
+
+	ul {
+		list-style: none;
+	}
+
+	.qodef-m-info-list-title {
+		margin: 0;
+	}
+
+	.qodef-m-info-list-text {
+		margin: 25px 0 0;
+		padding: 0 26% 0 0;
+	}
+
+	.qodef-m-info-title {
+		margin: 27px 0 8px;
+	}
+}

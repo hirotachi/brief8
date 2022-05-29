@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+    @include qodefRelativeLayout();
+
+    .wpcf7-response-output {
+        margin: 2em 0 0 0 !important;
+    }
+
+    .ajax-loader {
+        animation: qode-rotate 2s linear infinite;
+        background-image: none !important;
+        border: 2px solid #e6e6e6 !important;
+        border-radius: 50%;
+        border-top: 2px solid var(--qodef-main-color) !important;
+        height: 23px !important;
+        margin: 0 0 0 12px !important;
+        position: absolute;
+        right: -10px;
+        width: 23px !important;
+    }
+
+    .qodef-standard-form {
+        span.qodef-offset-label {
+            display: inline-block;
+            padding: 13px 15px 9px;
+        }
+
+        .wpcf7-submit {
+            min-width: 174px;
+        }
+    }
+
+    .qodef-newsletter-form {
+        display: flex;
+        align-items: flex-start; //Prevent button from dropping when feedback form appears
+
+        .your-email {
+
+            #qodef-page-footer & {
+                max-width: calc(100% - 115px);
+
+                @include qodefScreenSize680 {
+                    max-width: 100%;
+                }
+            }
+
+            input {
+
+                #qodef-page-footer & {
+                    width: 414px;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        input {
+            margin-bottom: 0;
+        }
+
+        button {
+            margin: 27px 0 0 16px;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        @include qodefScreenSize680 {
+            flex-direction: column;
+
+            button {
+                margin-left: 0;
+            }
+        }
+    }
+}

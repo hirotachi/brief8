@@ -1,0 +1,181 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$vertical-minimal-header-width: 89px;
+
+$vertical-content-grid-width-responsive-map: (
+	1400 : (
+		responsive-break: (
+			$screen-size-1441: $screen-size-1680,
+			$screen-size-1281: $screen-size-1440,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-1100,
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	),
+	1300 : (
+		responsive-break: (
+			$screen-size-1441: $screen-size-1680,
+			$screen-size-1281: $screen-size-1440,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-1100,
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	),
+	1200 : (
+		responsive-break: (
+			$screen-size-1441: $screen-size-1680,
+			$screen-size-1281: $screen-size-1440,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-1100,
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	),
+	1100 : (
+		responsive-break: (
+			$screen-size-1281: $screen-size-1366,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	)
+);
+
+.qodef-header--vertical-minimal {
+	
+	.qodef-content-grid,
+	section.qodef-elementor-content-grid > .elementor-container {
+		
+		@each $key, $values in $vertical-content-grid-width-responsive-map {
+			$index: 1;
+			
+			@each $responsive-key, $responsive-value in map-deep-get($vertical-content-grid-width-responsive-map, $key, 'responsive-break') {
+				
+				@media only screen and (min-width: $responsive-key) and (max-width: $responsive-value) {
+					
+					@at-root .qodef-content-grid-#{$key}#{&} {
+						width: #{nth(map-deep-get($vertical-content-grid-width-responsive-map, $key, 'content-grid-width'), $index)}
+					}
+				}
+				
+				$index: $index + 1;
+			}
+		}
+	}
+	
+	#qodef-page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: $vertical-minimal-header-width;
+		height: 100%;
+		padding: 0;
+	}
+	
+	#qodef-page-header-inner {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		flex-direction: column;
+		border-right: 1px solid;
+		border-bottom: 1px solid;
+		border-color: currentColor;
+		width: 100%;
+
+		.qodef-opener-icon {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			&.qodef-source--predefined {
+
+				&.qodef-fullscreen-menu-opener {
+					padding: 44px 0;
+				}
+			}
+		}
+		
+		.qodef-widget-holder {
+			display: block;
+			height: auto;
+			margin: 0;
+
+			padding-top: 31px;
+			
+			.widget {
+				margin : 0 0 15px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.qodef-header-logo-link {
+			position: absolute;
+			bottom: 15px;
+			margin-top: 35px;
+			width: 100%;
+			justify-content: center;
+
+			&:before {
+				content: '';
+				width: 100%;
+				position: absolute;
+				left: 0;
+				border-top: 1px solid currentColor;
+				top: -10px;
+			}
+
+			img {
+				left: auto;
+			}
+		}
+	}
+	
+	&.admin-bar {
+		
+		#qodef-page-header {
+			top: 32px;
+			height: calc(100% - 32px);
+		}
+	}
+	
+	#qodef-page-outer,
+	#qodef-page-footer {
+		padding-left: $vertical-minimal-header-width;
+
+		@include qodefScreenSize1024 {
+			padding-left: 0;
+		}
+	}
+
+	&.qodef-fullscreen-menu--opened {
+
+		#qodef-page-header-inner {
+
+			.qodef-opener-icon {
+				border: none;
+			}
+
+			.qodef-header-logo-link {
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+/* ==========================================================================
+   Full Screen Menu Opener styles
+   ========================================================================== */
+
+.qodef-fullscreen-menu--opened {
+	
+	.qodef-fullscreen-menu-opener {
+		color: var(--qodef-main-color);
+	}
+	
+	#qodef-page-header,
+	#qodef-page-mobile-header {
+		visibility: hidden;
+	}
+	
+	.qodef-header-logo-link,
+	.qodef-mobile-header-logo-link,
+	.qodef-header-logo-image.qodef--customizer,
+	.qodef-fullscreen-menu-opener {
+		visibility: hidden;
+	}
+	
+	#qodef-page-header .qodef-header-logo-link img {
+		
+		&.qodef--light {
+			opacity: 1;
+		}
+		
+		&.qodef--main,
+		&.qodef--dark {
+			opacity: 0;
+		}
+	}
+
+	&.qodef-fullscreen-menu--hide-logo {
+
+		.qodef-header-logo-link,
+		.qodef-mobile-header-logo-link,
+		.qodef-header-logo-image.qodef--customizer {
+			visibility: hidden;
+		}
+	}
+}

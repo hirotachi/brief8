@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	@include qodefRelativeLayout();
+	margin: 22px 0 89px;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	
+	.qodef-m-nav {
+		position: relative;
+		display: flex;
+		align-items: center;
+		
+		> * {
+			display: block;
+			line-height: inherit;
+		}
+		
+		.qodef-m-pagination-icon {
+			position: relative;
+			top: -2px;
+			display: block;
+			width: 30px;
+			height: auto;
+			fill: currentColor;
+			stroke: none;
+			overflow: visible;
+			
+			polygon {
+				transition: transform .4s cubic-bezier(.39,.1,0,.98);
+			}
+		}
+		
+		&.qodef--prev {
+			left: 0;
+			
+			.qodef-m-pagination-icon {
+				margin-right: 13px;
+			}
+			
+			&:hover {
+				svg polygon {
+					transform: translate3d(-6px , 0, 0);
+				}
+			}
+		}
+		
+		&.qodef--next {
+			flex-direction: row-reverse;
+			right: 0;
+			margin-left: auto;
+			text-align: right;
+			
+			.qodef-m-pagination-icon {
+				margin-left: 13px;
+			}
+			
+			&:hover {
+				svg polygon {
+					transform: translate3d(6px , 0, 0);
+				}
+			}
+		}
+	}
+	
+	.qodef-m-nav-label {
+		@include qodefHeadingStyle('h5');
+	}
+}

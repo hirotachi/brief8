@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Portfolio Project Info shortcode style - begin
+   ========================================================================== */
+
+.qodef-portfolio-project-info {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+
+	.qodef-e-label {
+		margin: 0 0 5px 0;
+	}
+
+	p, a {
+		margin: 0;
+	}
+}
+
+/* ==========================================================================
+   Portfolio Project Info shortcode style - end
+   ========================================================================== */

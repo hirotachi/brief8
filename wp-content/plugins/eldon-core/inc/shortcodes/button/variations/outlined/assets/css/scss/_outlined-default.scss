@@ -1,0 +1,19 @@
+.qodef-button {
+
+    &.qodef-layout--outlined {
+        @include qodefButtonOutlinedColor();
+
+        &:before,
+        &:after {
+            display: none;
+        }
+
+        &:hover {
+            transform: none;
+        }
+
+        &:hover {
+            @include qodefButtonOutlinedHoverColor();
+        }
+    }
+}

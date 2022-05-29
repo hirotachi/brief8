@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Custom Font shortcode styles
+   ========================================================================== */
+.widget {
+
+	&.widget_eldon_core_custom_font {
+		margin-bottom: 0 !important;
+	}
+}
+
+.qodef-custom-font {
+	position: relative;
+
+	&.qodef-alignment--center {
+		text-align: center;
+	}
+
+	&.qodef-alignment--left {
+		text-align: left;
+	}
+
+	&.qodef-alignment--right {
+		text-align: right;
+	}
+
+	.qodef-m-tagline {
+		@include qodefInfoStyle($font-weight: 300);
+		margin-bottom: 8px;
+
+		&:before {
+			content: '';
+			position: relative;
+			display: inline-block;
+			width: 9px;
+			height: 9px;
+			bottom: 1px;
+			margin-right: 5px;
+			background: currentColor;
+		}
+	}
+
+	.qodef-custom-font-content {
+		line-height: 1.125em;
+		margin: 0;
+	}
+	
+	.qodef-m-link {
+		position: relative;
+
+		//&:after {
+		//	content: '';
+		//	position: absolute;
+		//	bottom: .15em;
+		//	left: 0;
+		//	width: 100%;
+		//	height: 0.05em;
+		//	background: currentColor;
+		//}
+		
+		@include  qodefMultiline();
+		
+		&:hover {
+			@include  qodefMultilineHover();
+		}
+	}
+	
+	//opacity: 0;
+	//animation: qode-fade-in 1s .2s forwards;
+	
+	&.qodef--has-appear {
+		.qodef-animated-text-holder {
+			position: relative;
+			display: inline-flex;
+		}
+		
+		.qodef-animated-text-original {
+			opacity: 0;
+			padding-right:1px;
+		}
+		
+		.qodef-animated-text-duplicate {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: inherit;
+		}
+		
+		&.qodef-appear {
+			.qodef-animated-text-holder {
+				.qodef-animated-text-duplicate {
+					animation: qodef-font-weight-animation-to-thin 2.8s cubic-bezier(.46,.03,.52,.96) infinite forwards;
+					animation-delay: calc(#{var(--qodef-animated-index)} * 150ms);
+				}
+			}
+		}
+	}
+}
+
+.qodef-custom-rev-text-1,
+.qodef-custom-rev-text-2,
+.qodef-custom-rev-text-3,
+.qodef-custom-rev-text-4 {
+	animation: qodef-font-weight-animation-to-regular 2.6s cubic-bezier(.46,.03,.52,.96) infinite forwards;
+}
+
+.qodef-custom-rev-text-1 {
+	animation-delay: 150ms;
+}
+
+.qodef-custom-rev-text-2 {
+	animation-delay: 300ms;
+}
+
+.qodef-custom-rev-text-3 {
+	animation-delay: 450ms;
+}
+
+.qodef-custom-rev-text-4 {
+	animation-delay: 600ms;
+}
+

@@ -1,0 +1,127 @@
+/* ==========================================================================
+   Testimonials list shortcode styles
+   ========================================================================== */
+
+.qodef-testimonials-list {
+	padding: 0 8% 0 0;
+	flex-basis: 87%;
+	
+	.qodef-e-inner {
+		padding-bottom: 40px;
+	}
+
+	&.qodef-swiper-container {
+
+		.qodef-e-inner {
+			padding-bottom: 0;
+		}
+	}
+	
+	.qodef-e-media-image {
+		line-height: 0;
+		margin-bottom: 25px;
+	}
+	
+	.qodef-e-title {
+		margin: 0 0 25px;
+	}
+	
+	.qodef-e-text {
+		margin: 0 0 21px;
+	}
+	
+	.qodef-e-author {
+		margin: 0 0 30px;
+		@include qodefInfoStyle($font-size: 19px, $font-weight: 300);
+
+	}
+	
+	.swiper-pagination-bullets {
+		text-align: left;
+		bottom: 0 !important;
+		
+		.swiper-pagination-bullet {
+			&:before {
+				background-color: var(--qodef-main-color);
+			}
+		}
+	}
+
+	.qodef-e-author-signature {
+		color: var(--qodef-main-color);
+
+		svg {
+			fill: currentColor;
+		}
+	}
+
+	&.swiper-container-vertical {
+
+		~ .swiper-button-outside {
+
+			 &.swiper-button-prev,
+			 &.swiper-button-next {
+				transform: rotate(90deg);
+				left: auto !important;
+				right: 0 !important;
+				
+				svg polygon {
+					transition-duration: .22s;
+				}
+				 
+				 &:hover {
+					 svg polygon {
+						 transition-duration: .4s;
+						 transition-delay: .1s;
+					 }
+				 }
+			}
+
+			&.swiper-button-prev {
+				top: calc(50% - 50px);
+			}
+
+			&.swiper-button-next {
+				top: calc(50% + 8px);
+			}
+		}
+
+		> .swiper-pagination-bullets {
+			right: 50px;
+		}
+	}
+
+	&-wrapper {
+		display: flex;
+
+		.qodef-testimonials-list-icon {
+			flex-basis: 13%;
+			position: relative;
+
+			&--filled,
+			&--outlined {
+				font-size: 280px;
+				font-weight: 700;
+				height: 70px;
+				line-height: 0.65em;
+			}
+
+			&--filled {
+				color: var(--qodef-main-color);
+				position: relative;
+				top: 4px;
+				left: -7px;
+			}
+
+			&--outlined {
+				position: absolute;
+				top: 14px;
+				left: 3px;
+				-webkit-text-fill-color: transparent;
+				-webkit-text-stroke-width: 1px;
+				-webkit-text-stroke-color: var(--qodef-main-color);
+			}
+		}
+	}
+}
+

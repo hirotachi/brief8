@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Info List shortcode responsive styles
+   ========================================================================== */
+
+.qodef-info-list {
+	
+	@include qodefScreenSize1024 {
+
+		.qodef-m-info-list-text {
+			padding-right: 21%;
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		.qodef-m-info-list-text {
+			padding-right: 0;
+		}
+	}
+}

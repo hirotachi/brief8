@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Team lists shortcode styles - responsive
+   ========================================================================== */
+
+.qodef-team-list {
+
+	@include qodefScreenSize1024 {
+
+		&.qodef-item-layout--info-above,
+		&.qodef-item-layout--info-below {
+
+			> .qodef-grid-inner {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.qodef-e-content {
+				margin: 30px 0;
+			}
+		}
+
+		&.qodef-item-layout--info-below {
+			.qodef-e-content {
+				margin: 30px 0 50px;
+			}
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		&.qodef-grid.qodef-gutter--no {
+
+			>.qodef-grid-inner {
+
+				>.qodef-grid-item {
+					margin: 10px 0;
+				}
+			}
+		}
+
+		&.qodef-item-layout--info-below {
+			.qodef-e-content {
+				margin: 30px 0;
+			}
+		}
+	}
+}

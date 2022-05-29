@@ -1,0 +1,361 @@
+/* ==========================================================================
+   Portfolio list horizontal shortcode style - begin
+   ========================================================================== */
+
+$space: 22px;
+
+.qodef-portfolio-list-horizontal-holder {
+    display: flex;
+    flex-direction: column;
+	opacity: 0;
+	animation: qode-opacity .3s forwards .1s;
+    
+    @at-root .qodef-overflow {
+        overflow: hidden !important;
+        
+        &.touch {
+            body {
+                position: fixed;
+                width: 100vw;
+                height: 100vh;
+            }
+        }
+    }
+	
+	&:not(.qodef--has-appear) {
+		.qodef-m-extra-light {
+			.qodef-m-regular-style {
+				display: none;
+			}
+		}
+	}
+
+	&.qodef--has-appear {
+		.qodef-m-extra-light {
+			font-style: normal;
+			position: relative;
+			display: inline-flex;
+			justify-content: center;
+
+			.qodef-m-regular-style {
+				opacity: 0;
+				position: absolute;
+				font-style: normal;
+			}
+
+			.qodef-m-extra-light-style {
+				opacity: 1;
+			}
+		}
+	}
+
+    .qodef-portfolio-list-horizontal-inner {
+        position: relative;
+        box-sizing: border-box;
+        padding-left: calc(70px - #{$space});
+        white-space: nowrap;
+        will-change: transform;
+        transition: transform .7s cubic-bezier(.2, .84, .5, 1);
+	    opacity: 0;
+    }
+
+    .qodef-plh-item {
+	    display: inline-flex;
+	    flex-direction: column;
+        width: 21vw;
+	    height: 100%;
+        margin: 0 $space;
+
+		@media (min-height: 1200px) {
+			width: 25vw;
+		}
+
+        @include qodefScreenSize680 {
+            width: calc(100% - 45px);
+        }
+
+	    .qodef-e-media-image-holder {
+		    display: inline-block;
+		    overflow: hidden;
+		    height: 100%;
+	    }
+
+	    .qodef-e-media-image-holder-inner {
+		    display: inline-flex;
+			align-items: center;
+		    height: 100%;
+		    transform: scaleX(1.4);
+		    opacity: 0;
+		    transition: opacity .35s ease-out,transform .7s cubic-bezier(.22,.61,.36,1);
+	    }
+
+        &:nth-child(2) {
+            margin-left: 25.5vw;
+        }
+
+	    &:last-child {
+		    margin-right: 42px;
+	    }
+
+        &.qodef--appear {
+
+	        .qodef-e-media-image-holder-inner {
+		        opacity: 1;
+		        transform: scaleX(1);
+	        }
+        }
+
+        >a {
+            display: block;
+            overflow: hidden;
+	        height: 100%;
+        }
+
+        img {
+            border: 1px solid var(--qodef-main-color);
+        }
+
+	    .qodef-e-info-category {
+		    font-size: 15px;
+		    a {
+
+			    &:not(:last-child) {
+				    &:after {
+					    content: '/';
+					    color: inherit;
+				    }
+
+				    &:hover {
+					    &:after {
+						    color: initial;
+
+						    .qodef-skin--black & {
+							    color: #fff;
+						    }
+					    }
+				    }
+			    }
+		    }
+	    }
+    }
+
+    img {
+        vertical-align: middle;
+
+        @include qodefScreenSize680 {
+            max-height: 100%;
+        }
+    }
+
+    .qodef-plhi-title {
+        margin: 23px 0 8px;
+        max-width: 250px;
+        white-space: normal;
+    }
+
+    .qodef-moving-text {
+        font-size: 400px;
+        line-height: 0.95em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        transition: transform .7s cubic-bezier(.2, .84, .5, 1);
+        position: relative;
+	    font-weight: 400;
+	    padding: 0 0 7px 50px;
+
+	    @media only screen and (max-width: 1700px) {
+		    font-size: 360px;
+	    }
+
+        @include qodefScreenSize1600 {
+            font-size: 300px;
+        }
+
+        @include qodefScreenSize1366 {
+            font-size: 240px;
+        }
+
+		@include qodefScreenSize1280 {
+			font-size: 242px;
+		}
+
+	    .qodef-m-thin {
+		    font-weight: 100;
+	    }
+	    .qodef-m-regular-style {
+		    display: none;
+	    }
+    }
+
+    .qodef-ptfh-static {
+        position: absolute;
+        left: 80px;
+		top: 50%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+		padding-top: 20px;
+        max-width: 18vw;
+	    transition: opacity .15s ease-in-out;
+        z-index: 50;
+		white-space: normal;
+		transform: translateY(-50%);
+
+        @include qodefScreenSize1440 {
+	        max-width: 23vw;
+        }
+
+	    @include qodefScreenSize1280 {
+		    left: 60px;
+	    }
+
+        @include qodefScreenSize1024 {
+            top: 2%;
+	        left: 0;
+			transform: none;
+        }
+
+        .qodef-ptfh-widget-area {
+
+            .widget.widget_eldon_core_icon_list_item {
+                margin: 0;
+                position: relative;
+                top: 3px;
+            }
+        }
+
+	    .qodef-m-extra-light {
+		    font-weight: 200;
+	    }
+	    
+        &.qodef--reset-animation {
+	        .qodef-ptfh-title {
+		        .qodef-animated-text-duplicate {
+			        animation-name: qodef-font-weight-animation-to-thin;
+		        }
+	        }
+        }
+	
+	    &.qodef--remove-animation {
+		    .qodef-ptfh-title {
+			    .qodef-animated-text-duplicate {
+				    animation-name: none;
+			    }
+		    }
+	    }
+    }
+
+    .qodef-ptfh-outlined-title {
+        @include qodefInfoStyle($font-weight: 300);
+	    padding-left: 21px;
+	    position: relative;
+
+	    &:before {
+		    content: '';
+		    position: absolute;
+		    left: 0;
+		    width: 9px;
+		    height: 9px;
+		    background-color: var(--qodef-main-color);
+		    top: 50%;
+		    transform: translateY(-50%);
+	    }
+    }
+    
+    .qodef-ptfh-title {
+	    margin: 11px 0 0;
+	    font-family: 'Montserrat', sans-serif;
+	
+	    @include qodefScreenSize1440 {
+		    max-width: 100%;
+	    }
+	
+	    > span {
+		    display: block;
+		
+		    .qodef-skin--black & {
+			    transition: 0s !important;
+		    }
+		
+		    &:first-child {
+			    @media all and (-ms-high-contrast: none) {
+				    //IE Text stroke replacement
+				    color: #fff;
+				    text-shadow: -1px -1px 0px #bbbbbb, 1px 1px 0px #bbbbbb, -1px 1px 0px #bbbbbb, 1px -1px 0px #bbbbbb;
+			    }
+		    }
+	    }
+	
+	    .qodef-animated-text-holder {
+		    position: relative;
+	    }
+	
+	    .qodef-animated-text-original {
+		    opacity: 0;
+	    }
+	
+	    .qodef-animated-text-duplicate {
+		    position: absolute;
+		    left: 0;
+		    //animation: qodef-font-weight-animation-to-thin .9s cubic-bezier(0.46, 0.03, 0.52, 0.96) 3 both;
+		    animation: qodef-font-weight-animation-to-thin 2.8s cubic-bezier(.46,.03,.52,.96) infinite forwards;
+		    animation-delay: calc(#{var(--qodef-animated-index)} * 150ms);
+	    }
+    }
+
+    .qodef-ptfh-button {
+        margin-top: 50px;
+        display: inline-block;
+	    transition: transform .3s cubic-bezier(.37,.2,0,1.15),-webkit-transform .3s cubic-bezier(.37,.2,0,1.15);
+	    transform: rotate(0);
+	    
+	    &:hover {
+		    transform: rotate(-45deg);
+	    }
+
+        svg {
+			width: 73px;
+
+	        &.qodef-icon-outlined {
+		        stroke: var(--qodef-main-color);
+		        width: 76px;
+		        fill: transparent;
+	        }
+
+	        &.qodef-icon-filled {
+		        fill: var(--qodef-main-color);
+		        position: absolute;
+		        left: 4px;
+		        bottom: 15px;
+		        width: 73px;
+	        }
+        }
+    }
+    
+    @include keyframes(qodefPTFHfade) {
+        0% {
+            opacity: 0;
+        }
+        
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    &.qodef-loaded {
+        visibility: visible;
+        
+        .qodef-ptfh-title>span {
+            transform: translate3d(0, 0, 0);
+        }
+        
+        .qodef-portfolio-list-horizontal-inner {
+            animation: qodefPTFHfade .7s forwards cubic-bezier(.2, .84, .5, 1);
+            will-change: transform;
+        }
+    }
+}
+
+/* ==========================================================================
+   Portfolio list horizontal shortcode style - end
+   ========================================================================== */

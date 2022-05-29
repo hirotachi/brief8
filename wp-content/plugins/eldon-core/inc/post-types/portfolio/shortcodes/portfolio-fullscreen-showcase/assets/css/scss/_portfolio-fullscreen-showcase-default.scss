@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Portfolio Fullscreen Showcase shortcode style - begin
+   ========================================================================== */
+
+.qodef-portfolio-fullscreen-showcase {
+	height: 100vh;
+
+	.admin-bar & {
+		height: calc(100vh - 32px);
+	}
+
+	.qodef-e-background-holder {
+		height: 100%;
+	}
+
+	.qodef-e-inner {
+		height: 100%;
+		position: relative;
+	}
+
+	.qodef-e-post-link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}

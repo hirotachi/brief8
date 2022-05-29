@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Pricing Table shortcode styles
+   ========================================================================== */
+
+.qodef-pricing-table {
+	@include qodefRelativeLayout();
+	text-align: center;
+	border: 1px solid var(--qodef-main-color);
+
+	&.qodef-status--featured {
+		background-image: url("../../inc/shortcodes/pricing-table/assets/img/featured-bg.png");
+	}
+
+	.qodef-m-inner {
+		padding: 108px 10px 106px;
+	}
+	
+	.qodef-m-title {
+		
+		p {
+			margin: 0;
+			@include qodefInfoStyle();
+		}
+	}
+
+	.qodef-m-subtitle {
+		font-size: 18px;
+		padding-bottom: 13px;
+	}
+	
+	.qodef-m-price {
+		margin-top: -3px;
+		
+		.qodef-m-price-wrapper {
+			margin: 5px 0 26px;
+			line-height: 1;
+		}
+
+		.qodef-m-price-currency {
+			font-size: 0.5em;
+			position: absolute;
+			left: -26px;
+			top: 5px;
+		}
+
+		.qodef-m-price-value {
+			display: inline-flex;
+			position: relative;
+		}
+	}
+	
+	.qodef-m-content {
+		margin: 25px 0 0;
+		
+		ul {
+			list-style: none;
+			margin: 0;
+			
+			li {
+				color: $heading-color;
+				margin-bottom: 8px;
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+				
+				&:before {
+					content: '\f00c';
+					font-family: "Font Awesome 5 Free";
+					font-weight: 900;
+					padding-right: 8px;
+				}
+			}
+		}
+	}
+	
+	.qodef-m-button {
+		
+		.qodef-button {
+			margin: 53px 0 0;
+			transform: translateX(-16px);
+		}
+	}
+}

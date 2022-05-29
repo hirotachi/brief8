@@ -1,0 +1,15 @@
+.qodef-team-list {
+	
+	&.qodef-item-layout--info-above {
+
+		> .qodef-grid-inner {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+		}
+		
+		.qodef-e-content {
+			margin: 0 0 30px;
+		}
+	}
+}

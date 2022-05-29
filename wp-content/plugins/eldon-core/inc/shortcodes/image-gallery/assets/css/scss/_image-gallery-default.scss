@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Image Gallery shortcode styles
+   ========================================================================== */
+
+.qodef-image-gallery {
+
+	&.qodef-col-num--predefined {
+
+		.qodef-e {
+			transition: $transform-transition;
+			transform: scale(0.78);
+			will-change: transform;
+
+			&.swiper-slide-active {
+				transform: scale(1);
+				padding: 53px 20px 20px;
+				background: var(--qodef-main-color-second) url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNS4yLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA0NyAxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDcgMTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHg9IjEuMyIgeT0iMC41IiBjbGFzcz0ic3QwIiB3aWR0aD0iOSIgaGVpZ2h0PSI5Ii8+DQo8L2c+DQo8Zz4NCgk8cmVjdCB4PSIxOS4zIiB5PSIwLjUiIGNsYXNzPSJzdDAiIHdpZHRoPSI5IiBoZWlnaHQ9IjkiLz4NCjwvZz4NCjxnPg0KCTxyZWN0IHg9IjM3LjMiIHk9IjAuNSIgY2xhc3M9InN0MCIgd2lkdGg9IjkiIGhlaWdodD0iOSIvPg0KPC9nPg0KPC9zdmc+DQo=") no-repeat;
+				background-size: 45px;
+				background-position: 12px 12px;
+
+				.qodef-skin--white & {
+					background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNS4yLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA0NyAxMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDcgMTA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+DQoJLnN0MHtmaWxsOiMwMDA7fQ0KPC9zdHlsZT4NCjxnPg0KCTxyZWN0IHg9IjEuMyIgeT0iMC41IiBjbGFzcz0ic3QwIiB3aWR0aD0iOSIgaGVpZ2h0PSI5Ii8+DQo8L2c+DQo8Zz4NCgk8cmVjdCB4PSIxOS4zIiB5PSIwLjUiIGNsYXNzPSJzdDAiIHdpZHRoPSI5IiBoZWlnaHQ9IjkiLz4NCjwvZz4NCjxnPg0KCTxyZWN0IHg9IjM3LjMiIHk9IjAuNSIgY2xhc3M9InN0MCIgd2lkdGg9IjkiIGhlaWdodD0iOSIvPg0KPC9nPg0KPC9zdmc+DQo=")
+				}
+
+				img {
+					border: 1px solid var(--qodef-border-frame);
+				}
+			}
+		}
+	}
+
+	&.qodef-border-enabled {
+
+		.qodef-e {
+			margin: 10px 0;
+
+			border: 1px solid var(--qodef-border-frame);
+		}
+	}
+}

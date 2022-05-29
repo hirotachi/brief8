@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$left-right-spacing: 23px;
+
+#qodef-page-header-inner {
+
+    .qodef-header-bottom--right & {
+
+        .qodef-header-navigation {
+            margin-left: auto;
+        }
+    }
+
+    .qodef-header-bottom--center & {
+
+        .qodef-header-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+
+            .qodef-header-logo {
+                position: absolute;
+            }
+        }
+
+        .qodef-header-navigation {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .qodef-header-bottom--left & {
+
+        .qodef-header-navigation {
+            margin-right: auto;
+        }
+
+        .qodef-header-logo-link {
+            margin-right: $left-right-spacing * 2;
+        }
+    }
+
+    .qodef-header-bottom--border & {
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            background-color: $background-color;
+        }
+    }
+}
+
+.qodef-header--bottom {
+
+    @media only screen and (min-width: $screen-size-1025) {
+        #qodef-slider-holder + #qodef-page-header {
+            margin-top: calc(100vh - 100px);
+
+            .qodef--passepartout & {
+                transform: translateY(-15px);
+            }
+        }
+    }
+
+    .qodef-header-logo {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    #qodef {
+
+        &-slider-holder {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+
+            > div {
+                height: 100% !important;
+            }
+        }
+
+		&-page-wrapper {
+			z-index: 1;
+			background-color: inherit;
+		}
+
+        &-page-outer {
+            z-index: 1;
+			background-color: inherit;
+        }
+    }
+
+    .qodef-header-navigation ul li .qodef-drop-down-second.qodef-sub-upwards {
+        top: auto!important;
+        bottom: 100%;
+        left: -44px; //Child list item padding
+    
+        ul ul {
+            top: auto!important;
+            bottom: -46px!important;
+        }
+    }
+}

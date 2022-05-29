@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+.qodef-header--bottom {
+
+    @include qodefScreenSize1024 {
+
+        &.qodef--passepartout {
+
+            #qodef-slider-holder {
+                width: 100% !important;
+            }
+        }
+
+        #qodef {
+
+            &-slider-holder {
+                position: relative;
+                order: 1;
+            }
+
+            &-page {
+
+                &-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                &-mobile-header {
+                    order: 0;
+                }
+
+                &-outer {
+                    order: 2;
+                }
+
+                &-footer {
+                    order: 3;
+                }
+            }
+        }
+    }
+}

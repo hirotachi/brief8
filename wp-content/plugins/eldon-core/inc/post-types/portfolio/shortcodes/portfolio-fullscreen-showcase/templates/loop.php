@@ -1,0 +1,13 @@
+<?php if ( $query_result->have_posts() ) {
+	while ( $query_result->have_posts() ) :
+		$query_result->the_post();
+		$params['item_classes'] = $this_shortcode->get_item_classes( $params );
+
+		eldon_core_list_sc_template_part( 'post-types/portfolio/shortcodes/portfolio-fullscreen-showcase', 'layouts/' . $layout, '', $params );
+	endwhile; // End of the loop.
+} else {
+	// Include global posts not found
+	eldon_core_theme_template_part( 'content', 'templates/parts/posts-not-found' );
+}
+
+wp_reset_postdata();

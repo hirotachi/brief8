@@ -1,0 +1,158 @@
+/* ==========================================================================
+   Portfolio List shortcode variation hover styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+
+	&.qodef-item-layout--info-follow {
+
+		&.qodef-hover-animation--follow {
+			&.qodef-image-tilt {
+				.qodef-e-inner {
+					transform-style: preserve-3d;
+				}
+			}
+			
+			&.qodef-image-blurred {
+				.qodef-e-media-image {
+					&.qodef--background {
+						img {
+							visibility: visible;
+						}
+					}
+				}
+				
+				&.qodef-png-blurred-images {
+					.qodef-e-media-image {
+						&.qodef--background {
+							background: none!important;
+						}
+					}
+				}
+			}
+
+			&.qodef-border-enabled {
+
+				article {
+
+					.qodef-e-inner {
+						border: 1px solid var(--qodef-main-color);
+					}
+				}
+			}
+
+			article {
+
+				.qodef-e-inner {
+					overflow: hidden;
+				}
+
+				.qodef-e-media-image {
+
+					&.qodef--background {
+						margin-bottom: 0;
+					}
+				}
+
+				.qodef-e-content {
+					display: none;
+				}
+
+				.qodef-e-title {
+					color: var(--qodef-main-color);
+
+					a {
+						color: inherit;
+
+						&:hover {
+							color: var(--qodef-main-color);
+						}
+					}
+				}
+
+				.qodef-e-info {
+
+					> * {
+						color: var(--qodef-main-color);
+					}
+
+					a {
+
+						&:hover {
+							color: var(--qodef-main-color);
+						}
+					}
+				}
+
+				.qodef-e-post-link {
+					z-index: 2;
+				}
+			}
+		}
+	}
+}
+
+.qodef-e-content-follow {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	pointer-events: none;
+	visibility: hidden;
+	transform: translateX(calc(-50% - 15px));
+	text-align: left;
+
+	&:not(.qodef-has-arrow) {
+
+		.qodef-e-icon {
+			display: none;
+		}
+	}
+
+	.qodef-e-icon {
+		width: 48px;
+		fill: var(--qodef-main-color);
+		margin-left: 10px;
+	}
+
+	.qodef-e-title {
+		margin: 0;
+		color: var(--qodef-main-color);
+
+		a {
+			color: inherit;
+		}
+	}
+
+	.qodef-e-info {
+
+		> * {
+			color: var(--qodef-main-color);
+		}
+	}
+
+	.qodef-e-top-holder {
+		display: flex;
+	}
+
+	.qodef-e-bottom-holder,
+	.qodef-e-top-holder {
+
+		> * {
+			display: inline-block;
+			z-index: 10;
+			white-space: nowrap;
+		}
+	}
+
+	&.qodef-has-arrow {
+
+		.qodef-e-bottom-holder {
+			margin-top: -13px;
+		}
+	}
+
+	&.qodef-is-active {
+		visibility: visible;
+	}
+}

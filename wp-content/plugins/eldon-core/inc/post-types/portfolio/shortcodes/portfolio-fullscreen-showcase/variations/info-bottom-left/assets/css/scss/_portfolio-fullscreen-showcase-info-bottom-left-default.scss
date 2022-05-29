@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Portfolio Fullscreen Showcase shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-fullscreen-showcase {
+
+	&.qodef-item-layout--info-bottom-left {
+
+		.qodef-e-content {
+			position: absolute;
+			bottom: 0;
+			left: -1px;
+			z-index: 1;
+			background-color: var(--qodef-main-color-second);
+			border: 1px solid var(--qodef-main-color);
+			padding: 9px 58px 30px;
+
+			@include qodefScreenSize1024 {
+				left: 0;
+			}
+
+			@include qodefScreenSize680 {
+				padding: 6px 38px 30px;
+			}
+
+			@include qodefScreenSize480 {
+				width: 80%;
+			}
+
+			.qodef-e-info {
+				display: inline-flex;
+
+				> * {
+					@include qodefParagraphStyle();
+				}
+			}
+
+			.qodef-e-title {
+				margin-bottom: 5px;
+			}
+		}
+
+		.qodef-e-background-holder {
+			overflow: hidden;
+		}
+
+		.qodef-e-media-image {
+
+			&.qodef--background {
+				width: 100%;
+				height: 100%;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+
+				img {
+					display: none;
+				}
+			}
+		}
+
+		.swiper-pagination-bullets {
+			width: auto;
+			left: 50%;
+			transform: translateX(-50%);
+
+			@include qodefScreenSize1024 {
+				display: none;
+			}
+		}
+
+		&.qodef-bullets--on {
+			padding-bottom: 0;
+		}
+		
+		.swiper-slide {
+			opacity: 1!important;
+			transition: z-index 0s;
+			
+			.qodef-e-content {
+				opacity: 1;
+				overflow: hidden;
+				clip-path: inset(0 100% 0 0);
+				transition: -webkit-clip-path .3s cubic-bezier(.46,.03,.52,.96);
+			}
+			
+			.qodef-e-title,
+			.qodef-e-info {
+				opacity: 0;
+			}
+			
+			&.swiper-slide-prev {
+				z-index: 1;
+			}
+			
+			&.swiper-slide-active {
+				z-index: 2;
+				
+				.qodef-e-background-holder {
+					animation: qode-fs-swiper-image-in .9s cubic-bezier(.46,.03,.52,.96) both;
+				}
+				
+				.qodef-e-title {
+					animation: qode-swiper-title-in .7s .05s cubic-bezier(.46,.03,.52,.96) forwards;
+				}
+				
+				.qodef-e-info {
+					animation: qode-swiper-title-in .7s .15s cubic-bezier(.46,.03,.52,.96) forwards;
+				}
+				
+				.qodef-e-content {
+					clip-path: inset(0 0% 0 0);
+					transition-duration: .6s;
+				}
+			}
+		}
+		
+		&.qodef-swiping-backwards {
+			.swiper-slide {
+				&.swiper-slide-prev {
+					z-index: 0;
+				}
+				
+				&.swiper-slide-next {
+					z-index: 1;
+				}
+			}
+		}
+	}
+}

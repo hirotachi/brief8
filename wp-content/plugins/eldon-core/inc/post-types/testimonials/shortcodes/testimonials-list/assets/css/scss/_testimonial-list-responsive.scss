@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Testimonials list shortcode styles - responsive
+   ========================================================================== */
+
+.qodef-testimonials-list {
+
+	@include qodefScreenSize1024 {
+
+		&-wrapper {
+
+			flex-direction: column;
+
+			.qodef-testimonials-list-icon {
+				max-height: 120px
+			}
+		}
+	}
+
+	@include qodefScreenSize480 {
+		padding: 0;
+		max-height: 100vH;
+
+		&.swiper-container-vertical {
+
+			~ .swiper-button-outside {
+
+				&.swiper-button-prev {
+					top: 6px;
+				}
+
+				&.swiper-button-next {
+					top: 66px;
+				}
+			}
+		}
+	}
+}

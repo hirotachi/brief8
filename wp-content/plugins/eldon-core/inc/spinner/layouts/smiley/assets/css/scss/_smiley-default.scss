@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	&.qodef-layout--smiley {
+		.qodef-stamp,
+		.qodef-m-centred-icon {
+			color: currentColor;
+		}
+		
+		.qodef-e-smiley-1,
+		.qodef-e-smiley-2,
+		.qodef-e-smiley-3,
+		.qodef-e-smiley-4 {
+			width: 150px;
+			height: 150px;
+			background-image: url('../../assets/img/eldon-smiley.png');
+			background-size: contain;
+			opacity: 0;
+		}
+		
+		.qodef-e-smiley-2,
+		.qodef-e-smiley-3,
+		.qodef-e-smiley-4 {
+			position: absolute;
+		}
+		
+		.qodef-e-smiley-1 {
+			opacity: 1;
+		}
+		
+		.qodef-m-smiley {
+			opacity: 0;
+			animation: qodef-smiley-loader-fade-in .7s .1s forwards;
+		}
+		
+		.qodef-e-smiley-1 {
+			opacity: 1;
+			animation: qodef-smiley-loader 3s .8s infinite;
+		}
+		
+		//.qodef--animated {
+		//	.qodef-e-smiley-1 {
+		//		opacity: 1;
+		//		animation: qodef-smiley-loader 3s .5s infinite;
+		//	}
+		//}
+		
+		&.qodef-animate-out {
+			.qodef-e-smiley-1 {
+				animation-play-state: paused;
+			}
+		}
+	}
+}

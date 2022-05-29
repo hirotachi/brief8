@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Global styles
+   ========================================================================== */
+
+.eldon-core-page-inline-style {
+	position: absolute !important;
+	width: 0;
+	height: 0;
+	line-height: 1;
+	display: none;
+}
+
+
+.qodef-e-smiley-holder {
+	color: var(--qode-main-color);
+	position: fixed;
+	width: 130px;
+	height: 130px;
+	border: 10px solid transparent;
+	z-index: 2;
+	opacity: 0;
+	transform: scale(.5);
+	visibility: hidden;
+	transition: opacity .2s, transform .2s , visibility .2s .2s;
+	pointer-events: none;
+	
+	&.qodef-is-active {
+		transition: opacity 1s, transform .5s, visibility 0s 0s;
+		opacity: 1;
+		transform: scale(1);
+		visibility: visible;
+	}
+	
+	.qodef-e-smiley{
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+		background-image: url('../../assets/img/eldon-smiley.png');
+		background-size: contain;
+	}
+}
+
+.qodef-rev-custom-shake-animation {
+	img {
+		transform: translate3d(0, 0, 0);
+		backface-visibility: hidden;
+		perspective: 1000px;
+		animation: qodef-shake-image-rev 1.9s cubic-bezier(.36,.07,.19,.97) infinite both;
+	}
+	
+	&.qodef--moving {
+		img {
+			animation-play-state: paused;
+		}
+	}
+}
+
+.qodef-custom-logo-animation {
+	@include qodefLogoAnimate();
+}
+
+.qodef-svg-blur-filter {
+	@include qodefAbsoluteLayout();
+	pointer-events: none;
+}
+
+.qodef-custom-bg-animation {
+	animation: qodef-animated-background 30s linear alternate infinite;
+	
+	@include qodefScreenSize768 {
+		animation-duration: 20s;
+	}
+	
+	@include qodefScreenSize680 {
+		animation: none;
+	}
+}
+
+.qodef-safari-btt-fix {
+	@at-root .qodef-browser--safari & {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+.qodef--overflow-y-hidden:not(.admin-bar):not(.elementor-editor-active) {
+	overflow-y: hidden;
+	height: 100vH;
+}

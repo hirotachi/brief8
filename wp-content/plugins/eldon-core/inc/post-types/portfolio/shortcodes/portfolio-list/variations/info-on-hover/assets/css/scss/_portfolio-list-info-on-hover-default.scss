@@ -1,0 +1,131 @@
+/* ==========================================================================
+   Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-portfolio-list {
+
+	&.qodef-item-layout--info-on-hover {
+		margin: 0;
+		
+		&.qodef-image-blurred {
+			.qodef-e-media-image {
+				&.qodef--background {
+					img {
+						visibility: visible;
+					}
+				}
+			}
+		}
+
+		article {
+
+			.qodef-e-media-image {
+
+				&.qodef--background {
+					margin-bottom: 0;
+				}
+			}
+
+			.qodef-e-content {
+				@include qodefAbsoluteLayout();
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				background-color: rgba($heading-color, .12);
+				padding: 22% 10.25% 15.5%;
+
+				a {
+					position: relative;
+					z-index: 3;
+				}
+			}
+
+			.qodef-e-title {
+				color: $main-color-black;
+
+				a {
+					color: inherit;
+				}
+			}
+
+			.qodef-e-info {
+				margin-top: 6px;
+
+				> * {
+					@include qodefParagraphStyle();
+					color: $main-color-black;
+				}
+			}
+
+			.qodef-e-post-link {
+				z-index: 2;
+			}
+
+			&:hover {
+
+				//.qodef-e-media-image {
+				//	&.qodef--background {
+				//		&:after {
+				//			opacity: 1;
+				//		}
+				//	}
+				//}
+			}
+
+			.qodef-e-inner {
+				border: 1px solid var(--qodef-main-color);
+				padding: 20px;
+			}
+
+			.qodef-e-background-holder {
+				overflow: hidden;
+			}
+
+			.qodef-e-top-holder {
+				margin-top: 30px;
+
+				@include qodefScreenSize1024 {
+					margin-top: 23px;
+				}
+			}
+
+			.qodef-e-media-second-image {
+				height: 100%;
+
+				a {
+					display: block;
+					height: 100%;
+					position: relative;
+
+					@include qodefScreenSize768 {
+						min-height: 124px;
+					}
+
+					@include qodefScreenSize480 {
+						min-height: 118px;
+					}
+
+					img {
+						max-height: 100%;
+						width: auto;
+						object-fit: cover;
+						box-shadow: 0 1px 14px rgba(0, 0, 0, 0.15);
+						position: absolute;
+					}
+				}
+			}
+		}
+		
+		&.qodef--mouse-control-holder {
+			.qodef--mouse-control-item {
+				@include qodefAbsoluteLayout();
+				left: 20px;
+				//top: 50px;
+				
+				@media only screen and (min-width: $screen-size-1025) and (max-width: $screen-size-1440)  {
+					left: 50px;
+				}
+			}
+		}
+	}
+}

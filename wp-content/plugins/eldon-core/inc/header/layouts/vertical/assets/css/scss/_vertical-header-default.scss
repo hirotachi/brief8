@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$vertical-header-width: 44.8%;
+
+$vertical-content-grid-width-responsive-map: (
+		1400 : (
+				responsive-break: (
+						$screen-size-1441: $screen-size-1680,
+						$screen-size-1281: $screen-size-1440,
+						$screen-size-1025: $screen-size-1280,
+				),
+				content-grid-width: (
+						$content-grid-width-700,
+						$content-grid-width-screen-size-768,
+						$content-grid-width-500,
+				)
+		),
+		1300 : (
+				responsive-break: (
+						$screen-size-1441: $screen-size-1680,
+						$screen-size-1281: $screen-size-1440,
+						$screen-size-1025: $screen-size-1280,
+				),
+				content-grid-width: (
+						$content-grid-width-700,
+						$content-grid-width-screen-size-768,
+						$content-grid-width-500,
+				)
+		),
+		1200 : (
+				responsive-break: (
+						$screen-size-1441: $screen-size-1680,
+						$screen-size-1281: $screen-size-1440,
+						$screen-size-1025: $screen-size-1280,
+				),
+				content-grid-width: (
+						$content-grid-width-700,
+						$content-grid-width-screen-size-768,
+						$content-grid-width-500,
+				)
+		),
+		1100 : (
+				responsive-break: (
+						$screen-size-1441: $screen-size-1680,
+						$screen-size-1281: $screen-size-1440,
+						$screen-size-1025: $screen-size-1280,
+				),
+				content-grid-width: (
+						$content-grid-width-700,
+						$content-grid-width-screen-size-768,
+						$content-grid-width-500,
+				)
+		)
+);
+
+.qodef-header--vertical {
+
+	.qodef-content-grid,
+	section.qodef-elementor-content-grid > .elementor-container {
+		@media only screen and (min-width: $screen-size-1025) {
+			width: 900px;
+		}
+
+		@each $key, $values in $vertical-content-grid-width-responsive-map {
+			$index: 1;
+
+			@each $responsive-key, $responsive-value in map-deep-get($vertical-content-grid-width-responsive-map, $key, 'responsive-break') {
+
+				@media only screen and (min-width: $responsive-key) and (max-width: $responsive-value) {
+
+					@at-root .qodef-content-grid-#{$key}#{&} {
+						width: #{nth(map-deep-get($vertical-content-grid-width-responsive-map, $key, 'content-grid-width'), $index)}
+					}
+				}
+
+				$index: $index + 1;
+			}
+		}
+	}
+
+	#qodef-page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: $vertical-header-width;
+		height: 100%;
+		background: #000;
+		padding: 54px 80px;
+
+		@media only screen and (min-width: 1921px) {
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+	}
+
+	#qodef-page-header-inner {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		flex-direction: column;
+		padding: 0;
+		border-width: 0;
+
+		.widget {
+
+			&, a {
+				color: #fff
+			}
+		}
+
+		.qodef-widget-holder {
+			margin-left: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			align-items: flex-start;
+
+			.widget {
+				margin: 0 0 15px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.switch .switch__label {
+			border-color: #fff;
+		}
+	}
+
+	&.admin-bar {
+
+		#qodef-page-header {
+			top: 32px;
+			height: calc(100% - 32px);
+		}
+	}
+
+	#qodef-page-outer,
+	#qodef-page-footer {
+		padding-left: $vertical-header-width;
+	}
+}

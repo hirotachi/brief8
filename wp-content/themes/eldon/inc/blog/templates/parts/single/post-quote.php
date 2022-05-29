@@ -1,0 +1,48 @@
+<article <?php post_class( 'qodef-blog-item qodef-e' ); ?>>
+	<div class="qodef-e-inner">
+		<?php
+		// Include post format part
+		eldon_template_part( 'blog', 'templates/parts/post-format/quote' );
+		?>
+		<div class="qodef-e-content">
+			<div class="qodef-e-text">
+				<div class="qodef-e-top-holder">
+					<div class="qodef-e-info">
+						<?php
+						// Include post date info
+						eldon_template_part( 'blog', 'templates/parts/post-info/date' );
+						?>
+						<?php
+						// Include post category info
+						eldon_template_part( 'blog', 'templates/parts/post-info/categories' );
+						?>
+					</div>
+				</div>
+				<?php
+				// Include post content
+				the_content();
+
+				// Hook to include additional content after blog single content
+				do_action( 'eldon_action_after_blog_single_content' );
+				?>
+			</div>
+			<div class="qodef-e-bottom-holder">
+				<div class="qodef-e-left qodef-e-info">
+					<?php
+					// Include post category info
+					eldon_template_part( 'blog', 'templates/parts/post-info/categories' );
+					?>
+				</div>
+				<div class="qodef-e-right qodef-e-info">
+					<?php
+					// Include social share functionality
+					if ( eldon_is_installed( 'core' ) ) {
+						$params['title'] = 'share:';
+						eldon_core_template_part( 'blog/shortcodes/blog-list/templates/post-info', 'social-share', '', $params );
+					}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+</article>
